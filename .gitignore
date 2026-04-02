@@ -1,0 +1,21 @@
+# Python virtual environment
+backend/venv/
+
+# Secret config — never commit this
+backend/.env
+
+# SQLite database — local data only
+backend/*.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+frontend/node_modules/
+frontend/.env
+
+# OS files
+.DS_Store
+Thumbs.db

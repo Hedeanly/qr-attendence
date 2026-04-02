@@ -1,0 +1,175 @@
+.container {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.header {
+  background: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  font-size: 22px;
+  color: #1a1a2e;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.logoutBtn {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.logoutBtn:hover {
+  background: #c53030;
+}
+
+.main {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.scanSection {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scanSection h2 {
+  font-size: 18px;
+  color: #1a1a2e;
+}
+
+.scanSection p {
+  font-size: 14px;
+  color: #777;
+}
+
+.scanBtn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.scanBtn:hover {
+  background: #4338ca;
+}
+
+.cancelBtn {
+  background: #718096;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.cancelBtn:hover {
+  background: #4a5568;
+}
+
+.scanner {
+  max-width: 400px;
+  margin-top: 8px;
+}
+
+.statsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.statsSection h2 {
+  font-size: 18px;
+  color: #1a1a2e;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 4px solid #4f46e5;
+}
+
+.atRisk {
+  border-left-color: #e53e3e;
+}
+
+.card h3 {
+  font-size: 16px;
+  color: #1a1a2e;
+}
+
+.percentage {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.atRisk .percentage {
+  color: #e53e3e;
+}
+
+.breakdown {
+  font-size: 13px;
+  color: #888;
+}
+
+.warning {
+  font-size: 13px;
+  color: #e53e3e;
+  font-weight: 500;
+}
+
+.success {
+  color: #276749;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 14px;
+}
+
+.empty {
+  color: #888;
+  font-size: 15px;
+}

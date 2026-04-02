@@ -1,0 +1,127 @@
+.container {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.header {
+  background: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  font-size: 22px;
+  color: #1a1a2e;
+}
+
+.endBtn {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.endBtn:hover:not(:disabled) {
+  background: #c53030;
+}
+
+.endBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 32px;
+}
+
+.qrPanel, .attendancePanel {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.qrPanel h2, .attendancePanel h2 {
+  font-size: 18px;
+  margin-bottom: 24px;
+  color: #1a1a2e;
+}
+
+.qrBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.countdown {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.countdown strong {
+  color: #4f46e5;
+}
+
+.empty {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.present {
+  background: #c6f6d5;
+  color: #276749;
+}
+
+.late {
+  background: #fefcbf;
+  color: #744210;
+}
+
+.absent {
+  background: #fed7d7;
+  color: #822727;
+}
+
+.center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #555;
+}
