@@ -8,6 +8,26 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f0f2f5;
   color: #333;
+  background-image: url('/kasem_emblem.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: 500px;
+  background-blend-mode: normal;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/kasem_emblem.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 500px;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
 }
 
 button {

@@ -32,7 +32,10 @@ function TeacherDashboard() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1>Teacher Dashboard</h1>
+        <div className={styles.headerLeft}>
+          <img src="/kasem_UNI.jpg" alt="Kasem Bundit University" className={styles.logo} />
+          <h1>Teacher Dashboard</h1>
+        </div>
         <div className={styles.headerRight}>
           <span>Welcome, {user?.username}</span>
           <button onClick={handleLogout} className={styles.logoutBtn}>Logout</button>

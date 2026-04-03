@@ -12,6 +12,18 @@
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
 .header h1 {
   font-size: 22px;
   color: #1a1a2e;

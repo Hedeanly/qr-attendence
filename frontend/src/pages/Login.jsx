@@ -46,6 +46,7 @@ function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
+        <img src="/kasem_UNI.jpg" alt="Kasem Bundit University" className={styles.logo} />
         <h1 className={styles.title}>QR Attendance</h1>
         <p className={styles.subtitle}>Sign in to continue</p>
 
