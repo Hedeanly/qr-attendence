@@ -15,7 +15,7 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./qr_attendance.db")
 
-# Render's PostgreSQL URLs start with "postgres://" — fix it for SQLAlchemy
+# Render's PostgreSQL URLs start with "postgres://
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
