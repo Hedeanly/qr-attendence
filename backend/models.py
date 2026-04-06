@@ -21,9 +21,6 @@ import enum
 from database import Base
 
 
-# ─────────────────────────────────────────────
-# ENUMS — fixed set of allowed values
-# ─────────────────────────────────────────────
 
 class UserRole(str, enum.Enum):
     admin   = "admin"
@@ -36,10 +33,6 @@ class AttendanceStatus(str, enum.Enum):
     absent  = "absent"
 
 
-# ─────────────────────────────────────────────
-# USER
-# Stores all users regardless of role
-# ─────────────────────────────────────────────
 
 class User(Base):
     __tablename__ = "users"
@@ -57,10 +50,6 @@ class User(Base):
     attendance      = relationship("Attendance", back_populates="student")
 
 
-# ─────────────────────────────────────────────
-# CLASS
-# A subject or course taught by a teacher
-# ─────────────────────────────────────────────
 
 class Class(Base):
     __tablename__ = "classes"
@@ -78,11 +67,6 @@ class Class(Base):
     resources   = relationship("Resource", back_populates="class_", cascade="all, delete-orphan")
 
 
-# ─────────────────────────────────────────────
-# ENROLLMENT
-# Links students to classes they are enrolled in
-# ─────────────────────────────────────────────
-
 class Enrollment(Base):
     __tablename__ = "enrollments"
 
@@ -96,11 +80,6 @@ class Enrollment(Base):
     class_      = relationship("Class", back_populates="enrollments")
 
 
-# ─────────────────────────────────────────────
-# SESSION
-# A single class meeting started by a teacher
-# Contains the temporary QR code for that meeting
-# ─────────────────────────────────────────────
 
 class Session(Base):
     __tablename__ = "sessions"
@@ -118,10 +97,6 @@ class Session(Base):
     attendance  = relationship("Attendance", back_populates="session", cascade="all, delete-orphan")
 
 
-# ─────────────────────────────────────────────
-# ATTENDANCE
-# Records a student's attendance for a session
-# ─────────────────────────────────────────────
 
 class Attendance(Base):
     __tablename__ = "attendance"
@@ -138,10 +113,6 @@ class Attendance(Base):
     student = relationship("User", back_populates="attendance")
 
 
-# ─────────────────────────────────────────────
-# RESOURCE
-# Learning materials linked to a class
-# ─────────────────────────────────────────────
 
 class Resource(Base):
     __tablename__ = "resources"
