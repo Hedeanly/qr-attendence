@@ -2,6 +2,7 @@
 backend/venv/
 
 # Secret config — never commit this
+.env
 backend/.env
 
 # SQLite database — local data only
