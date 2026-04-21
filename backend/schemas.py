@@ -1,10 +1,8 @@
 """
 schemas.py — Data validation rules for the API
+ps pydanic rejects bad data :p
 
-Schemas define what data is allowed IN (requests) and OUT (responses).
-Built with Pydantic — it automatically validates and rejects bad data.
-
-Rule of thumb:
+things to remem, incase i forget lol :
   - Create schemas  → what the client sends to create something
   - Response schemas → what the API sends back (never include passwords)
   - Update schemas  → what the client sends to edit something (all optional)
@@ -16,10 +14,6 @@ from datetime import datetime
 from models import UserRole, AttendanceStatus
 
 
-# ─────────────────────────────────────────────
-# USER SCHEMAS
-# ─────────────────────────────────────────────
-
 class UserCreate(BaseModel):
     """Data required to register a new user"""
     username: str
@@ -29,7 +23,7 @@ class UserCreate(BaseModel):
 
 
 class UserResponse(BaseModel):
-    """What we send back — never include the password"""
+    """ never include the password"""
     id:         int
     username:   str
     email:      str
@@ -51,10 +45,6 @@ class TokenResponse(BaseModel):
     access_token: str
     token_type:   str = "bearer"
 
-
-# ─────────────────────────────────────────────
-# CLASS SCHEMAS
-# ─────────────────────────────────────────────
 
 class ClassCreate(BaseModel):
     """Data required to create a new class"""
@@ -81,9 +71,6 @@ class ClassUpdate(BaseModel):
     description: Optional[str] = None
 
 
-# ─────────────────────────────────────────────
-# ENROLLMENT SCHEMAS
-# ─────────────────────────────────────────────
 
 class EnrollmentCreate(BaseModel):
     """Data required to enroll a student in a class"""
@@ -101,9 +88,6 @@ class EnrollmentResponse(BaseModel):
         from_attributes = True
 
 
-# ─────────────────────────────────────────────
-# SESSION SCHEMAS
-# ─────────────────────────────────────────────
 
 class SessionCreate(BaseModel):
     """Data required to start a new session"""
@@ -124,10 +108,6 @@ class SessionResponse(BaseModel):
     class Config:
         from_attributes = True
 
-
-# ─────────────────────────────────────────────
-# ATTENDANCE SCHEMAS
-# ─────────────────────────────────────────────
 
 class ScanRequest(BaseModel):
     """Data sent when a student scans a QR code"""
@@ -180,10 +160,6 @@ class AttendanceHistoryResponse(BaseModel):
     class Config:
         from_attributes = True
 
-
-# ─────────────────────────────────────────────
-# RESOURCE SCHEMAS
-# ─────────────────────────────────────────────
 
 class ResourceCreate(BaseModel):
     """Data required to add a learning resource to a class"""

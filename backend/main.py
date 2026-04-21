@@ -1,7 +1,7 @@
 """
 main.py — Entry point for the QR Attendance backend API
 
-Start the server:
+to start the server:
   cd backend
   venv/Scripts/activate
   uvicorn main:app --reload
@@ -17,9 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from database import engine, Base, SessionLocal
 import models
 
-# ─────────────────────────────────────────────
-# CREATE THE APP
-# ─────────────────────────────────────────────
+
 
 app = FastAPI(
     title="QR Attendance API",
@@ -27,10 +25,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# ─────────────────────────────────────────────
-# CORS
-# Allows the frontend (Netlify) to talk to this backend
-# ─────────────────────────────────────────────
 
 app.add_middleware(
     CORSMiddleware,
@@ -40,17 +34,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ─────────────────────────────────────────────
-# CREATE DATABASE TABLES
-# Runs on startup — safe to run multiple times
-# ─────────────────────────────────────────────
+
 
 Base.metadata.create_all(bind=engine)
 
-# ─────────────────────────────────────────────
-# SEED INITIAL ADMIN USER
-# Creates a default admin account on first run
-# ─────────────────────────────────────────────
 
 def seed_admin():
     from routers.auth import hash_password
@@ -79,11 +66,7 @@ def seed_admin():
 
 seed_admin()
 
-# ─────────────────────────────────────────────
-# REGISTER ROUTERS
-# Each router handles one section of the API
-# Added as we build each feature
-# ─────────────────────────────────────────────
+
 
 from routers import auth, classes, sessions, attendance, resources
 app.include_router(auth.router)
